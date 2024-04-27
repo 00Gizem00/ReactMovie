@@ -1,12 +1,13 @@
 import React from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './route';
+import { MovieProvider } from './context/movie-context';
 
 const App = () => {
   return (
-    <div>
+    <MovieProvider>
       <RouterProvider router={router} />
-    </div>
+    </MovieProvider>
   );
 };
 

@@ -1,12 +1,25 @@
-import React, {SetStateAction} from "react";
+import React, {SetStateAction, useContext, useState} from "react";
 import Layout from "../../Layout";
 import { Box, InputAdornment, InputBase, Paper, Typography } from "@mui/material";
 import SearhIcon from "../../assets/icons/icon-search.svg";
+import MovieTrendList from "../../components/movie-list/movieTrendList";
+import MovieList from "../../components/movie-list";
+import { MovieContext } from "../../context/movie-context";
+import { MovieDataType } from "../../assets/data";
 
 const Home = () => {
-  const [search, setSearch] = React.useState("");
-  const handleSearch = (e: { target: { value: SetStateAction<string> }}) => 
+  const [search, setSearch] = useState("");
+  const [searchList, setSearchList] = useState<MovieDataType[]>([]);
+  const { state } = useContext(MovieContext);
+  const { movies } = state;
+  const trendingList = movies.filter((item) => item.isTrending === true);
+  const recommendList = movies.filter((item) => item.isTrending !== true);
+
+  const handleSearch = (e: { target: { value: SetStateAction<string> }}) => {
     setSearch(e.target.value);
+    const newList = movies.filter((movie) => movie.title.toLowerCase().includes(search.toLowerCase()));
+    setSearchList(newList);
+  }
   return (
     <Layout>
       <Box>
@@ -60,8 +73,9 @@ const Home = () => {
         ): (
           <Box width="100%">
             <Typography>
-              Found
+              Found {searchList.length} results for "{search}"{""}
             </Typography>
+            <MovieList recommendList={searchList} />
 
           </Box>
         )}

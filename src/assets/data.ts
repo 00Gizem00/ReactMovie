@@ -45,13 +45,13 @@ export interface MovieDataType {
       title: "Once Upon a Time We Were In",
       thumbnail: {
         trending: {
-          small: "./thumbnails/devn-sm.jpg",
-          large: "./thumbnails/devn-l.jpg",
+          small: "./thumbnails/yves-cedric-schulze-sm.jpg",
+          large: "./thumbnails/yves-cedric-schulze-l.jpg",
         },
         regular: {
-          small: "./thumbnails/devn-sm.jpg",
-          medium: "./thumbnails/devn-m.jpg",
-          large: "./thumbnails/devn-l.jpg",
+          small: "./thumbnails/yves-cedric-schulze-sm.jpg",
+          medium: "./thumbnails/yves-cedric-schulze-m.jpg",
+          large: "./thumbnails/yves-cedric-schulze-l.jpg",
         },
       },
       year: 2021,
@@ -125,9 +125,9 @@ export interface MovieDataType {
       title: "The Great Lands",
       thumbnail: {
         regular: {
-          small: "./thumbnails/the-great-lands/regular/small.jpg",
-          medium: "./thumbnails/the-great-lands/regular/medium.jpg",
-          large: "./thumbnails/the-great-lands/regular/large.jpg",
+          small: "./thumbnails/joel-protasio-sm.jpg",
+          medium: "./thumbnails/joel-protasio-m.jpg",
+          large: "./thumbnails/joel-protasio-l.jpg",
         },
       },
       year: 2019,
