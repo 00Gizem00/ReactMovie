@@ -79,10 +79,6 @@ const Home = () => {
 
           </Box>
         )}
-        
-
-        
-        
       </Box>
     </Layout>
   );
